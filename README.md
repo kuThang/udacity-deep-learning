@@ -48,3 +48,32 @@ for i in range (epochs):
             .
         model.train()   // switch model back to training
 ```
+
+## 3. Create model class
+```
+class Net(nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        # linear layer (784 -> 1 hidden node)
+        h1_node = 512
+        h2_node = 512
+        self.fc1 = nn.Linear(28 * 28, h1_node)
+        self.fc2 = nn.Linear(h1_node, h2_node)
+        self.fc3 = nn.Linear(h2_node, 10)
+        self.dropout = nn.Dropout(0.2)
+
+    def forward(self, x):
+        # flatten image input
+        x = x.view(-1, 28 * 28)
+        # add hidden layer, with relu activation function
+        x = F.relu(self.fc1(x))
+        x = self.dropout(x)
+        x = F.relu(self.fc2(x))
+        x = self.dropout(x)
+        x = self.fc3(x)
+
+        return x
+
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.SGD(model.parameters(), lr=0.01)
+```
