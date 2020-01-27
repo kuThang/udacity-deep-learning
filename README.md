@@ -1,4 +1,11 @@
 # Pytorch node
+
+## Utils
+- Visualize image and labels
+- - See [l6 CNN/cifar10_cnn_exercise.ipynb](https://github.com/kuThang/udacity-deep-learning/blob/master/l6%20CNN/cifar10_cnn_exercise.ipynb) or [l6 CNN/conv_visualization.ipynb](https://github.com/kuThang/udacity-deep-learning/blob/master/l6%20CNN/conv_visualization.ipynb) or [l6 CNN/maxpooling_visualization.ipynb](https://github.com/kuThang/udacity-deep-learning/blob/master/l6%20CNN/maxpooling_visualization.ipynb)
+- **Visualize CNN**
+- - See [visualize_CNN in Keras](https://github.com/kuThang/udacity-deep-learning/blob/master/l6%20CNN/visualize_CNN.ipynb)
+
 ## 1. Train, calculate loss and update
 ```
 from torch import nn
